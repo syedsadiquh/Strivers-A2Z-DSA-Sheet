@@ -491,12 +491,13 @@ public class Patterns {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        // System.out.println("Enter the number of Rows: ");
-        // int n = scanner.nextInt();
-        int n = 5;  // For testing
+        System.out.println("Enter the number of Rows: ");
+        int n = scanner.nextInt();
+        n = 5;  // For testing
 
         // Running Specific Pattern
         pattern22(n);
 
+        scanner.close();
     }
 }
