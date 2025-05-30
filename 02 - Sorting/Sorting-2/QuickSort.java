@@ -9,9 +9,9 @@ public class QuickSort {
      * 3. recursively does it for both sides.
      * 
      * 
-     * Time Complexity - 
+     * Time Complexity - O(NlogN)   -> N for partition and logN for dividing.
      * 
-     * Space Complexity - 
+     * Space Complexity - O(1) + some auxiliary stack space (usuaally ignored).
      */
     public static void sort(int[] arr) {
         qs(arr, 0, arr.length-1);
