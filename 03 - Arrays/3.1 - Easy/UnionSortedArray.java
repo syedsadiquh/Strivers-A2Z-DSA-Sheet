@@ -50,6 +50,10 @@ public class UnionSortedArray {
     }
 
     // Using two pointers -- Only Sorted arrays
+    /*
+     * Time Complexity - O(m+n); since already sorted we need to just traverse in a smart way.
+     * Space Complexity - O(m+n); union ArrayList take max of m+n element
+     */
     public static void approach3(int[] arr1, int[] arr2, int m, int n) {
         ArrayList<Integer> union = new ArrayList<>();
         int i = 0, j = 0;
