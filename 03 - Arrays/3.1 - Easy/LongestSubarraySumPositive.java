@@ -109,27 +109,28 @@ public class LongestSubarraySumPositive {
 
     // Optimal approach (Two Pointer Approach)
     /*
-     * Keep on adding the 2st pointer(right) and when if the sum > K then, move 1nd pointer(left) ahead, thus reducing the sum.
+     * Keep on adding the 2st pointer(right) and when if the sum > K then, move 1nd
+     * pointer(left) ahead, thus reducing the sum.
      * 
      * Time complexity - O(2n)
      * Space complexity - O(1)
      */
     public static void approach4(int[] arr, int n, int k) {
         int left = 0, right = 0, sum = arr[0], len = 0;
-        while (right<n) {
-            while (sum > k && left<=right) {
+        while (right < n) {
+            while (sum > k && left <= right) {
                 sum -= arr[left];
                 left++;
             }
             if (sum == k) {
-                len = Math.max(len, right-left+1);
+                len = Math.max(len, right - left + 1);
             }
 
             right++;
-            if (right<n) {
+            if (right < n) {
                 sum += arr[right];
             }
-            
+
         }
 
         System.out.println("Longest subarray : " + len);

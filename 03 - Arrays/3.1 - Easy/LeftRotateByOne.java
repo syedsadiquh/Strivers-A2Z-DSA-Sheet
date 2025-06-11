@@ -1,3 +1,5 @@
+// Given an array of N integers, left rotate the array by one place.
+
 import java.util.Scanner;
 
 public class LeftRotateByOne {

@@ -1,4 +1,5 @@
 // Program to remove the duplicates from a sorted array.
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -14,9 +15,9 @@ public class RemoveDuplicatesSorted {
         int[] unique = new int[n];
         int uindex = 0;
         for (int i = 0; i < n; i++) {
-            boolean u = true;       // Considering that the element is unique.. i.e no present in unique array
+            boolean u = true; // Considering that the element is unique.. i.e no present in unique array
             for (int j = 0; j < n; j++) {
-                if (arr[i] == unique[j]) {      // if the element in arr[i] already present in unique; break;
+                if (arr[i] == unique[j]) { // if the element in arr[i] already present in unique; break;
                     u = false;
                     break;
                 }
@@ -29,7 +30,7 @@ public class RemoveDuplicatesSorted {
 
         arr = unique.clone();
         for (int i : arr) {
-            System.out.print(i+" ");
+            System.out.print(i + " ");
         }
     }
 
@@ -53,11 +54,12 @@ public class RemoveDuplicatesSorted {
         }
 
         for (int i : arr) {
-            System.out.print(i+" ");
+            System.out.print(i + " ");
         }
     }
 
-    // Optimal Approach - Two pointers; i for element and j moves ahead until j-th element is diff from i-th element.
+    // Optimal Approach - Two pointers; i for element and j moves ahead until j-th
+    // element is diff from i-th element.
     /*
      * Time Complexity - O(n)
      * Space Complexity - O(1)
@@ -65,14 +67,14 @@ public class RemoveDuplicatesSorted {
     public static void approach3(int[] arr, int n) {
         int i = 0, j = 1;
         for (; j < n; j++) {
-            if (arr[i] != arr[j]) {     // new element found 
+            if (arr[i] != arr[j]) { // new element found
                 i++;
                 arr[i] = arr[j];
             }
         }
 
-        for (int j2 = 0; j2 < i+1; j2++) {
-            System.out.print(arr[j2]+" ");
+        for (int j2 = 0; j2 < i + 1; j2++) {
+            System.out.print(arr[j2] + " ");
         }
     }
 

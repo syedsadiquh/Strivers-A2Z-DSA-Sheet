@@ -1,3 +1,7 @@
+// Given an array of size n, write a program to check if the given array is sorted in 
+// (ascending / Increasing / Non-decreasing) order or not. 
+// If the array is sorted then return True, Else return False.
+
 import java.util.Scanner;
 
 public class CheckAscendingSorting {
@@ -11,8 +15,8 @@ public class CheckAscendingSorting {
 
         boolean sorted_flag = true;
         for (int i = 0; i < n; i++) {
-            for (int j = i+1; j < n; j++) {
-                if (arr[i]>arr[j]) {
+            for (int j = i + 1; j < n; j++) {
+                if (arr[i] > arr[j]) {
                     sorted_flag = false;
                     break;
                 }
@@ -36,8 +40,8 @@ public class CheckAscendingSorting {
      */
     public static void approach2(int[] arr, int n) {
         boolean sorted_flag = true;
-        for (int i = 0; i < n-2; i++) {
-            if (arr[i]>arr[i+1]) {
+        for (int i = 0; i < n - 2; i++) {
+            if (arr[i] > arr[i + 1]) {
                 sorted_flag = false;
                 break;
             }

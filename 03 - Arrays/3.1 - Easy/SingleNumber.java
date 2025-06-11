@@ -25,7 +25,7 @@ public class SingleNumber {
                 break;
             }
         }
-        System.out.println("Single Number : "+ missing);
+        System.out.println("Single Number : " + missing);
     }
 
     // Better Approach - 1 (Array Hashing)
@@ -38,13 +38,13 @@ public class SingleNumber {
         for (int i = 0; i < n; i++) {
             max = Math.max(max, arr[i]);
         }
-        int[] hash = new int[max+1];
+        int[] hash = new int[max + 1];
         for (int i = 0; i < n; i++) {
             hash[arr[i]]++;
         }
         for (int i = 0; i < n; i++) {
             if (hash[arr[i]] == 1) {
-                System.out.println("Single Number : "+arr[i]);
+                System.out.println("Single Number : " + arr[i]);
                 break;
             }
         }
@@ -58,7 +58,7 @@ public class SingleNumber {
     public static void approach3(int[] arr, int n) {
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         for (int i = 0; i < n; i++) {
-            hashMap.put(arr[i], hashMap.getOrDefault(arr[i], 0)+1);
+            hashMap.put(arr[i], hashMap.getOrDefault(arr[i], 0) + 1);
         }
         for (Entry<Integer, Integer> i : hashMap.entrySet()) {
             if (i.getValue() == 1) {
@@ -68,7 +68,8 @@ public class SingleNumber {
         }
     }
 
-    // Optimal Approach -- XOR Approach (XOR of all elements in array will lead to one number without pair thus our result)
+    // Optimal Approach -- XOR Approach (XOR of all elements in array will lead to
+    // one number without pair thus our result)
     /*
      * Time complexity - O(n)
      * Space Complexity - O(1)
@@ -91,6 +92,6 @@ public class SingleNumber {
             arr[i] = sc.nextInt();
         }
         approach4(arr, n);
-        sc.close(); 
+        sc.close();
     }
 }

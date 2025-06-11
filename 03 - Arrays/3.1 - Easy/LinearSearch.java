@@ -1,3 +1,6 @@
+// Given an array, and an element num the task is to find if num is present in the given array or not. 
+// If present print the index of the element or print -1.
+
 import java.util.Scanner;
 
 public class LinearSearch {
@@ -17,7 +20,7 @@ public class LinearSearch {
         }
 
         if (res != -1) {
-            System.out.println("Item found at index : "+res);
+            System.out.println("Item found at index : " + res);
         } else {
             System.out.println("Item not found...");
         }

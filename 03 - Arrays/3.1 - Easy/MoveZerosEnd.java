@@ -21,13 +21,13 @@ public class MoveZerosEnd {
         for (int i = 0; i < x; i++) {
             arr[i] = temp[i];
         }
-        for(int i = x; i<n; i++) {
+        for (int i = x; i < n; i++) {
             arr[i] = 0;
         }
 
         System.out.println("Modified Array :");
         for (int i : arr) {
-            System.out.print(i+" ");
+            System.out.print(i + " ");
         }
     }
 
@@ -38,7 +38,7 @@ public class MoveZerosEnd {
      */
     public static void approach2(int arr[], int n) {
         int i = 0, j = 1;
-        for(; j<n; j++) {
+        for (; j < n; j++) {
             if (arr[j] != 0) {
                 int temp = arr[i];
                 arr[i] = arr[j];
@@ -49,7 +49,7 @@ public class MoveZerosEnd {
 
         System.out.println("Modified Array :");
         for (int x : arr) {
-            System.out.print(x+" ");
+            System.out.print(x + " ");
         }
     }
 

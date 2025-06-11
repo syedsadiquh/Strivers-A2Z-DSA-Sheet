@@ -61,14 +61,14 @@ public class LongestSubarraySumNegativeZero {
             sum += arr[i];
 
             if (sum == k) {
-                maxLen = Math.max(maxLen, i+1);
+                maxLen = Math.max(maxLen, i + 1);
             }
 
             if (prefixSum.containsKey(sum - k)) {
                 maxLen = Math.max(maxLen, i - prefixSum.get(sum - k));
             }
 
-            if (!prefixSum.containsKey(sum)) {      // This help avoiding the overwriting of value for zeros.
+            if (!prefixSum.containsKey(sum)) { // This help avoiding the overwriting of value for zeros.
                 prefixSum.put(sum, i);
             }
         }

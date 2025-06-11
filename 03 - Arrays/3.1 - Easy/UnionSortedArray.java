@@ -1,4 +1,4 @@
-//  Given two sorted arrays, arr1, and arr2 of size n and m. Find the union of two sorted arrays. 
+// Given two sorted arrays, arr1, and arr2 of size n and m. Find the union of two sorted arrays. 
 // The union of two arrays can be defined as the common and distinct elements in the two arrays.
 // NOTE: Elements in the union should be in ascending order.
 
@@ -34,7 +34,8 @@ public class UnionSortedArray {
     // Using Sorted Set i.e. TreeSet
     /*
      * Time Complexity - O((m+n) log(m+n))
-     * Space Complexity - O(1);  if ArrayList is used for returning result, then O(m+n)
+     * Space Complexity - O(1); if ArrayList is used for returning result, then
+     * O(m+n)
      */
     public static void approach2(int[] arr1, int[] arr2, int m, int n) {
         TreeSet<Integer> ele = new TreeSet<>();
@@ -51,40 +52,40 @@ public class UnionSortedArray {
 
     // Using two pointers -- Only Sorted arrays
     /*
-     * Time Complexity - O(m+n); since already sorted we need to just traverse in a smart way.
+     * Time Complexity - O(m+n); since already sorted we need to just traverse in a
+     * smart way.
      * Space Complexity - O(m+n); union ArrayList take max of m+n element
      */
     public static void approach3(int[] arr1, int[] arr2, int m, int n) {
         ArrayList<Integer> union = new ArrayList<>();
         int i = 0, j = 0;
-        while (i<m && j<n) {
-            if (arr1[i] <= arr2[j]) {       // when equal(case 1) and less than(case 2), checking the last element to avoid duplicates
-                if (union.size() == 0 || union.get(union.size()-1) != arr1[i])
+        while (i < m && j < n) {
+            if (arr1[i] <= arr2[j]) { // when equal(case 1) and less than(case 2), checking the last element to avoid
+                                      // duplicates
+                if (union.size() == 0 || union.get(union.size() - 1) != arr1[i])
                     union.add(arr1[i]);
                 i++;
-            }
-            else {        // when greater than(case 3), adding after checking as above.
-                if (union.size() == 0 || union.get(union.size()-1) != arr2[j]) 
+            } else { // when greater than(case 3), adding after checking as above.
+                if (union.size() == 0 || union.get(union.size() - 1) != arr2[j])
                     union.add(arr2[j]);
                 j++;
             }
         }
-        while (i<m) {      // left over elements from arr1
-            if (union.get(union.size()-1) != arr1[i]) 
+        while (i < m) { // left over elements from arr1
+            if (union.get(union.size() - 1) != arr1[i])
                 union.add(arr1[i]);
             i++;
         }
-        while (j<n) {      // left over elements from arr2
-            if (union.get(union.size()-1) != arr2[j]) 
+        while (j < n) { // left over elements from arr2
+            if (union.get(union.size() - 1) != arr2[j])
                 union.add(arr2[j]);
             j++;
         }
 
         for (Integer integer : union) {
-            System.out.print(integer+" ");
+            System.out.print(integer + " ");
         }
     }
-
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
